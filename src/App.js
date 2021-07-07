@@ -1,25 +1,37 @@
 import logo from './logo.svg';
 import './App.css';
+import React from 'react';
+import { render } from '@testing-library/react';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
+class App extends React.Component {
+  render(){
+    return(
+      <nav>
+        <div className="nav_logo">
+          <i class="fas fa-bug"></i>
+          <a href="">SaMag</a>
+        </div>
+        <ul class="nav_menu">
+            <li><a href="home">Home</a></li>
+            <li><a href="Daily">Daily</a></li>
+            <li><a href="">Youtube</a></li>
+            <li><a href="">FAQ</a></li>
+            <li><a href="">Setting</a></li>
+        </ul>
+
+        <div class="nav_icon">
+            <i class="fab fa-aws"></i>
+            <i class="far fa-comments"></i>
+            <a href="login">Login</a>
+        </div>
+
+        <a href="#" class="nav_toggleBtn">
+            <i class="fas fa-bars"></i>
         </a>
-      </header>
-    </div>
-  );
+      </nav>
+      
+    );
+  }
 }
 
 export default App;
