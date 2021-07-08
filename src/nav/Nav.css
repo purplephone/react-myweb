@@ -1,0 +1,46 @@
+.App{
+  font-family: 'Roboto', sans-serif;
+  margin: 0;
+}
+
+a{
+  text-decoration: none;
+  color: white;
+}
+
+nav{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color:mediumslateblue;
+  padding:  8px 12px;
+}
+
+
+.nav_toggleBtn{
+  display: none;
+  position: absolute;
+  right: 32px;
+  font-size: 24px;
+}
+
+footer{
+  text-align: center;
+  width: 100%;
+  position: absolute;
+  bottom: 1%;
+  font-size: 13px;
+  margin: 0;
+}
+
+@media screen and (max-width: 700px) {
+  nav {
+      flex-direction: column;
+      align-items: flex-start;
+  }
+
+  .nav_toggleBtn{
+      display: block;
+  }
+
+}
