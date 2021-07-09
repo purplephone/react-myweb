@@ -1,0 +1,10 @@
+.video_list_entry{
+    margin: 5px;
+    display: flex;
+    width: 100%;
+}
+
+.video_image{
+    width: 180px;
+    height: 140px;
+}

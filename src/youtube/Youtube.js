@@ -1,11 +1,14 @@
-import React, { Component, useState } from 'react';
+import React, { Component } from 'react';
 import { searchYoutube } from './searchYoutube';
 import Search_bar from './Search_bar';
+import Video_list from './Video_list';
+import { Fakedata } from './Fakedata';
+import './Youtube.css'
 
 const search = {
-  query : 'laboom',
+  query : '릴보이',
   max : 10,
-  key : '%REACT_APP_YOUTUBE_API%',
+  key : process.env.REACT_APP_YOUTUBE_API,
 }
 
 class Youtube extends Component{
@@ -13,8 +16,9 @@ class Youtube extends Component{
     super(props);
 
     this.state ={
-      videos:null,
-      selectedVideo: {id:{videoId:'a'}}
+      input : '',
+      videos: Fakedata,
+      selectedVideo: Fakedata[0]
     };
   }
 
@@ -26,6 +30,26 @@ class Youtube extends Component{
       })
     })
   }
+
+  handleKeyPress = e =>{
+    if (e.key==='Enter'){
+      this.handleSearch()
+    }
+  }
+
+  handleChange= e =>{
+    this.setState({
+      input:e.target.value
+    })
+  }
+
+  handleSearch= () =>{
+    search.query= this.state.input
+    this.goToSearch()
+    this.setState({
+      input : ''
+    })
+  }
   
   componentDidMount(){
     this.goToSearch();
@@ -34,8 +58,13 @@ class Youtube extends Component{
   render(){
     return(
       <div>
-        <Search_bar/>
-        {this.state.selectedVideo ? '' : this.state.selectedVideo.id.videoId}
+        <Search_bar input={this.state.input} onSearch={this.handleSearch} onChange={this.handleChange} onKeyPress={this.handleKeyPress}/>
+        <div className="video">
+          <div className="video_player"></div>
+          <div className="video_list">
+            <Video_list videos={this.state.videos}/>
+          </div>
+        </div>
       </div>
     )
   }

@@ -22,7 +22,7 @@ class App extends Component{
         return(
             <div className="App">
                 <Nav onClick={(i) =>this.handleClick(i)}/>
-                <Main page={this.state.page}/>
+                {this.state.page}
             </div>
         )
     }

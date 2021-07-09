@@ -1,11 +1,11 @@
 import React from 'react';
 import './Search_bar.css'
 
-function Search_bar(props){
+const Search_bar=({input, onChange, onSearch, onKeyPress})=>{
     return(
         <div className="search_bar">
-            <input className="search_input" type="text"></input>
-            <button className="search_button">검색</button>
+            <input className="search_input" value={input} onChange={onChange} onKeyPress={onKeyPress}></input>
+            <button className="search_button" onClick={onSearch}>검색</button>
         </div>
     )
 }
