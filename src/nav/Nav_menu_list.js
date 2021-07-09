@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
 
-function Nav_menu_list(props){
+const Nav_menu_list = (props)=>{
+    const {onClick, name} = props
     return(
-        <li><a href={props.name}>{props.name}</a></li>
+        <li><a href="#" onClick={onClick}>{name}</a></li>
     )
 }
 

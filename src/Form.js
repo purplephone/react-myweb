@@ -1,8 +1,8 @@
 import React from 'react';
 
-const Form = ({onClick}) =>{
+function Form(props){
     return(
-        <button onClick={()=>onClick()}></button>
+        <button onClick={props.onClick}>{props.name}</button>
     )
 }
 

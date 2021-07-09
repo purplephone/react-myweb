@@ -1,24 +1,16 @@
-import React from 'react';
+import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import Nav from './nav/Nav';
 import reportWebVitals from './reportWebVitals';
-import Game from './tictactoe/Game'
-import Select from './Select'
+import App from './App'
 
 ReactDOM.render(
   <React.StrictMode>
-    <Nav/>
+    <App/>
   </React.StrictMode>,
   document.getElementById('root')
 );
 
-ReactDOM.render(
-  <React.StrictMode>
-    <Select/>
-  </React.StrictMode>,
-  document.getElementById('contents')
-);
 
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))
