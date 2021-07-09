@@ -1,4 +1,5 @@
-.video_list_frame{
+.video_list{
     justify-content: center;
     border: 1px solid black;
+    width: 30%;
 }

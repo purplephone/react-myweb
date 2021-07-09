@@ -1,10 +1,4 @@
 .video{
     display: flex;
-}
-
-.video_player{
-    width: 70%;
-}
-.video_list{
-    width: 30%;
+    width: 100%;
 }
